@@ -1,5 +1,7 @@
 var restify = require('restify');
 var builder = require('botbuilder');
+var appId;
+var appPassword;
 
 //=========================================================
 // Bot Setup
@@ -13,8 +15,10 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
   
 // Create chat bot
 var connector = new builder.ChatConnector({
-    appId: process.env.MICROSOFT_APP_ID,
-    appPassword: process.env.MICROSOFT_APP_PASSWORD
+    //appId: process.env.MICROSOFT_APP_ID,
+    //appPassword: process.env.MICROSOFT_APP_PASSWORD
+    appId: '733f9f92-ec31-4d2a-a37a-732305fe5b3f',
+    appPassword: 'vhpcsiaXPpgWBWpL97jE3BO'    
 });
 var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
