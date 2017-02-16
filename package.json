@@ -1,0 +1,23 @@
+{
+  "name": "demobot",
+  "version": "1.0.0",
+  "description": "A demo bot",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gkimothi/Test-Bot.git"
+  },
+  "author": "Gaurav Kimothi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gkimothi/Test-Bot/issues"
+  },
+  "homepage": "https://github.com/Gkimothi/Test-Bot#readme",
+  "dependencies": {
+    "botbuilder": "^3.6.0",
+    "restify": "^4.3.0"
+  }
+}
