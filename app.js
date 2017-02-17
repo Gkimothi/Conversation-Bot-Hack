@@ -1,7 +1,5 @@
 var restify = require('restify');
 var builder = require('botbuilder');
-var appId;
-var appPassword;
 
 //=========================================================
 // Bot Setup
@@ -45,7 +43,7 @@ intents.matches(/\b(install|installation)\b/i, [
         session.beginDialog('/install');
     },
     function (session, results) {
-        session.send('You can install %s from the Download Center http://itonline.kla-tencor.com/Pages/Download-Center.aspx', installApp);
+        session.send('You can install %s from the Download Center <A Test URL>', installApp);
         session.send('Can I help you with anything else?');
     }
 ]);
@@ -58,10 +56,10 @@ intents.matches(/\b(access)\b/i, [
     function (session, results) {
         console.log(results);
         if (application.entity == "SAP") {
-            session.send('To request access for %s please go to http://sapaccess', application.entity);
+            session.send('To request access for %s please go to <A Test URL>', application.entity);
             session.send('Can I help you with anything else?');
         } else {
-            session.send('To request access for %s please contact the Help Desk at 57979', application.entity);
+            session.send('To request access for %s please contact the Help Desk at XXXX', application.entity);
             session.send('Can I help you with anything else?');
         }
     }
@@ -69,11 +67,11 @@ intents.matches(/\b(access)\b/i, [
 
 
 intents.matches(/\b(done|quit|bye|no)\b/i, [
-//intents.matches(/^need access/i, [
     function (session) {
         session.beginDialog('/quit');
     }
 ]);
+
 
 intents.onDefault([
     function (session, args, next) {
@@ -126,7 +124,6 @@ bot.dialog('/install', [
     },
     function (session, results) {
         installApp = results.response;
-        //session.userData.name = results.response;
         session.endDialog();
     }
 ]);
